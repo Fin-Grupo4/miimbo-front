@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5123/api/Properties'
+const BASE_URL = 'https://miimbo-backend-fehhg5f4dnevb3bx.canadacentral-01.azurewebsites.net/api/Properties'
 
 export type Property = {
   id: number

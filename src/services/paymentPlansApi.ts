@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5123/api/PaymentPlans'
+const BASE_URL = 'https://miimbo-backend-fehhg5f4dnevb3bx.canadacentral-01.azurewebsites.net/api/PaymentPlans'
 
 /* ---------- Nested types from API (simplified for responses) ---------- */
 export type PaymentPlanProperty = {
