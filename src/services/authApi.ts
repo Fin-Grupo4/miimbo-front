@@ -1,6 +1,6 @@
 import type { User } from '../store/authStore'
 
-const BASE_URL = 'http://localhost:5123/api/Auth'
+const BASE_URL = 'https://miimbo-backend-fehhg5f4dnevb3bx.canadacentral-01.azurewebsites.net/api/Auth'
 
 type AuthResponse = {
   ok: boolean
