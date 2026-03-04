@@ -145,6 +145,7 @@ export function Login() {
                 borderColor: 'rgba(255,255,255,0.35)',
                 color: miimboColors.brand.midnight,
               }}
+              title="Ingresa el correo con el que estás registrado en Miimbo"
             />
 
             <input
@@ -157,6 +158,7 @@ export function Login() {
                 borderColor: 'rgba(255,255,255,0.35)',
                 color: miimboColors.brand.midnight,
               }}
+              title="Escribe tu contraseña, respetando mayúsculas y minúsculas"
             />
 
             <button
@@ -169,6 +171,7 @@ export function Login() {
                 border: '1px solid rgba(255,255,255,0.6)',
                 boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
               }}
+              title="Inicia sesión y carga automáticamente catálogos, clientes y propiedades"
             >
               {isSubmitting ? 'Ingresando...' : 'Iniciar Sesión'}
             </button>

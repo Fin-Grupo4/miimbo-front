@@ -209,6 +209,7 @@ export function Properties() {
         <h1
           className="text-xl font-bold tracking-tight"
           style={{ color: miimboColors.brand.midnight }}
+          title="Listado de inmuebles que puedes usar en las simulaciones"
         >
           Inmuebles
         </h1>
@@ -216,6 +217,7 @@ export function Properties() {
           label="+ Nuevo Inmueble"
           onClick={openCreateModal}
           className="w-auto px-8 py-2.5"
+          title="Crear un nuevo inmueble con su información básica"
         />
       </header>
 
@@ -360,6 +362,7 @@ export function Properties() {
                   onClick={handleSubmit}
                   disabled={isSubmitting}
                   className="w-full md:w-auto px-10"
+                  title="Guarda los datos del inmueble en Miimbo"
                 />
               </div>
             </Panel>
@@ -464,6 +467,7 @@ type PrimaryBarButtonProps = {
   onClick?: () => void
   disabled?: boolean
   className?: string
+  title?: string
 }
 
 function PrimaryBarButton({
@@ -471,12 +475,14 @@ function PrimaryBarButton({
   onClick,
   disabled = false,
   className = 'w-full',
+  title,
 }: PrimaryBarButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
+      title={title}
       className={`rounded-full text-xs font-bold tracking-wide py-2.5 transition-transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 ${className}`}
       style={{
         background:
@@ -504,6 +510,7 @@ function PropertyCard({ property, onEdit }: { property: Property; onEdit: (p: Pr
         background:
           'linear-gradient(145deg, rgba(255,213,99,0.25) 0%, rgba(255,240,225,0.7) 100%)',
       }}
+      title="Tarjeta con el resumen del inmueble; haz clic en Editar para modificarlo"
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-3 border-b border-white/40 pb-3">
@@ -560,6 +567,7 @@ function PropertyCard({ property, onEdit }: { property: Property; onEdit: (p: Pr
           label="Editar"
           onClick={() => onEdit(property)}
           className="w-full"
+          title="Abrir el formulario para editar este inmueble"
         />
       </div>
     </article>

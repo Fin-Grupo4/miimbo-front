@@ -223,6 +223,7 @@ export function Clients() {
           label="+ Nuevo Cliente"
           onClick={openCreateModal}
           className="w-auto px-8 py-2.5"
+          title="Crear un nuevo cliente y completar sus datos básicos"
         />
       </header>
 
@@ -424,6 +425,7 @@ export function Clients() {
                   onClick={handleSubmit}
                   disabled={isSubmitting}
                   className="w-full md:w-auto px-10"
+                  title="Guarda la información del cliente en Miimbo"
                 />
               </div>
             </Panel>
@@ -535,6 +537,7 @@ function ClientDetailPanel({
           label="Editar cliente"
           onClick={() => onEdit(client)}
           className="w-full"
+          title="Abre el formulario para editar este cliente"
         />
       </div>
     </div>
@@ -668,6 +671,7 @@ type PrimaryBarButtonProps = {
   onClick?: () => void
   disabled?: boolean
   className?: string
+  title?: string
 }
 
 function PrimaryBarButton({
@@ -675,12 +679,14 @@ function PrimaryBarButton({
   onClick,
   disabled = false,
   className = 'w-full',
+  title,
 }: PrimaryBarButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
+      title={title}
       className={`rounded-full text-xs font-bold tracking-wide py-2.5 transition-transform hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 ${className}`}
       style={{
         background:
@@ -796,6 +802,7 @@ function ClientsTable({
                     onClick={() => onSelect(c)}
                     className="text-[11px] font-bold underline"
                     style={{ color: miimboColors.brand.sunrise }}
+                    title="Ver el detalle de este cliente"
                   >
                     Mostrar
                   </button>

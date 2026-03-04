@@ -847,15 +847,39 @@ const handleMonedaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       {/* CABECERA */}
       <header className="flex items-center justify-between border-b border-[rgba(12,8,41,0.1)] pb-4">
         <div className="flex items-center gap-6">
-          <h1 className="text-xl font-bold tracking-tight" style={{ color: miimboColors.brand.midnight }}>
+          <h1
+            className="text-xl font-bold tracking-tight"
+            style={{ color: miimboColors.brand.midnight }}
+            title="Crea y analiza una simulación de crédito hipotecario"
+          >
             Simulación
           </h1>
           <div className="flex bg-white/40 p-1 rounded-full border border-white/60 shadow-sm backdrop-blur-md shrink-0">
-            <button className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${activeTab === 'datos' ? 'bg-gradient-to-r from-[#FF8400] to-[#FFA909] text-white shadow-md' : 'text-[rgba(12,8,41,0.6)] hover:bg-white/50'}`} onClick={() => setActiveTab('datos')}>Datos</button>
-            <button className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${activeTab === 'resultados' ? 'bg-gradient-to-r from-[#FF8400] to-[#FFA909] text-white shadow-md' : 'text-[rgba(12,8,41,0.6)] hover:bg-white/50'}`} onClick={() => setActiveTab('resultados')}>Resultados</button>
+            <button
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${activeTab === 'datos' ? 'bg-gradient-to-r from-[#FF8400] to-[#FFA909] text-white shadow-md' : 'text-[rgba(12,8,41,0.6)] hover:bg-white/50'}`}
+              onClick={() => setActiveTab('datos')}
+              title="Configura aquí todos los datos necesarios antes de simular"
+            >
+              Datos
+            </button>
+            <button
+              className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${activeTab === 'resultados' ? 'bg-gradient-to-r from-[#FF8400] to-[#FFA909] text-white shadow-md' : 'text-[rgba(12,8,41,0.6)] hover:bg-white/50'}`}
+              onClick={() => setActiveTab('resultados')}
+              title="Revisa los resultados, indicadores y cronograma de la simulación"
+            >
+              Resultados
+            </button>
           </div>
         </div>
-        <button type="button" onClick={handleNuevaSimulacion} className="rounded-full text-xs font-bold tracking-wide px-6 py-2.5 transition-transform hover:scale-[1.02] shrink-0" style={{background: 'linear-gradient(145deg, rgba(230,150,140,0.95) 0%, rgba(245,185,170,0.95) 100%)', color: '#FFFFFF', boxShadow: '0 4px 15px rgba(226,164,153,0.3)'}}>+ Nueva Simulación</button>
+        <button
+          type="button"
+          onClick={handleNuevaSimulacion}
+          className="rounded-full text-xs font-bold tracking-wide px-6 py-2.5 transition-transform hover:scale-[1.02] shrink-0"
+          style={{background: 'linear-gradient(145deg, rgba(230,150,140,0.95) 0%, rgba(245,185,170,0.95) 100%)', color: '#FFFFFF', boxShadow: '0 4px 15px rgba(226,164,153,0.3)'}}
+          title="Limpia todos los campos para empezar una simulación desde cero"
+        >
+          + Nueva Simulación
+        </button>
       </header>
 
       {/* DATOS */}
@@ -929,7 +953,12 @@ const handleMonedaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
                   <DiscreteInput label="Precio de Venta (PV)" value={PV} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPV(e.target.value === '' ? '' : Number(e.target.value))} prefix={sym} />
                 </div>
                 <div className="pt-2">
-                <Select label="Moneda" options={[{label: 'Soles (S/)', value: 'PEN'}, {label: 'Dólares ($)', value: 'USD'}]} value={moneda} onChange={handleMonedaChange} />
+                  <Select
+                    label="Moneda"
+                    options={[{label: 'Soles (S/)', value: 'PEN'}, {label: 'Dólares ($)', value: 'USD'}]}
+                    value={moneda}
+                    onChange={handleMonedaChange}
+                  />
                 </div>
               </div>
             </div>
@@ -1164,6 +1193,7 @@ const handleMonedaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
                         boxShadow: '0 8px 20px rgba(226,164,153,0.35)',
                       }
                 }
+                title="Genera el cronograma de pagos y los indicadores con los datos ingresados"
               >
                 {isSubmitting ? 'Generando…' : 'Generar Simulación'}
               </button>

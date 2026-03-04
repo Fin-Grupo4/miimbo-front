@@ -63,7 +63,11 @@ export function SimulationHistory() {
   return (
     <div className="space-y-8 relative max-w-5xl mx-auto">
       <header className="space-y-1">
-        <h1 className="text-xl font-bold tracking-tight" style={{ color: miimboColors.brand.midnight }}>
+        <h1
+          className="text-xl font-bold tracking-tight"
+          style={{ color: miimboColors.brand.midnight }}
+          title="Aquí puedes revisar todas las simulaciones que ya se guardaron"
+        >
           Historial de Simulaciones
         </h1>
       </header>
@@ -238,6 +242,7 @@ function HistoryTable({
                     style={{ color: miimboColors.brand.sunrise }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = miimboColors.brand.sunriseSoft)}
                     onMouseLeave={(e) => (e.currentTarget.style.color = miimboColors.brand.sunrise)}
+                    title="Abrir el resumen completo y el cronograma de esta simulación"
                   >
                     Ver Detalles
                   </button>

@@ -5,6 +5,7 @@ import { Clients } from './pages/Clients'
 import { Properties } from './pages/Properties'
 import { Simulation } from './pages/Simulation'
 import { SimulationHistory } from './pages/SimulationHistory'
+import { HelpCenter } from './pages/HelpCenter'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { PrivateRoute } from './routes/PrivateRoute'
@@ -27,6 +28,7 @@ function App() {
             <Route path="/propiedades" element={<Properties />} />
             <Route path="/simulacion" element={<Simulation />} />
             <Route path="/historial" element={<SimulationHistory />} />
+            <Route path="/ayuda" element={<HelpCenter />} />
           </Route>
         </Route>
 

@@ -39,13 +39,22 @@ export function Home() {
   return (
     <div className="space-y-8 max-w-4xl">
       {/* ——— Bienvenida ——— */}
-      <header className="rounded-[20px] border border-white/70 px-6 py-5 shadow-[0_14px_40px_rgba(12,8,41,0.08)] backdrop-blur-xl"
+      <header
+        className="rounded-[20px] border border-white/70 px-6 py-5 shadow-[0_14px_40px_rgba(12,8,41,0.08)] backdrop-blur-xl"
         style={{ background: 'linear-gradient(145deg, rgba(255,132,0,0.06) 0%, rgba(255,240,225,0.5) 60%, #FEFBF7 100%)' }}
       >
-        <h1 className="text-xl font-bold tracking-tight" style={{ color: miimboColors.brand.midnight }}>
+        <h1
+          className="text-xl font-bold tracking-tight"
+          style={{ color: miimboColors.brand.midnight }}
+          title="Saludo personalizado según el usuario que inició sesión"
+        >
           Hola, {firstName}
         </h1>
-        <p className="text-sm mt-1" style={{ color: 'rgba(12,8,41,0.55)' }}>
+        <p
+          className="text-sm mt-1"
+          style={{ color: 'rgba(12,8,41,0.55)' }}
+          title="Aquí ves un resumen general de lo que tienes cargado en Miimbo"
+        >
           Resumen de tu actividad en Miimbo
         </p>
       </header>
@@ -109,6 +118,7 @@ export function Home() {
               to="/historial"
               className="text-xs font-semibold transition-colors hover:underline"
               style={{ color: miimboColors.brand.sunrise }}
+              title="Ver el historial completo de simulaciones generadas"
             >
               Ver todo
             </Link>
@@ -136,6 +146,7 @@ export function Home() {
                     to="/historial"
                     className="text-[10px] font-semibold shrink-0"
                     style={{ color: miimboColors.brand.sunrise }}
+                    title="Abrir el detalle completo de esta simulación en el historial"
                   >
                     Ver
                   </Link>
@@ -158,6 +169,7 @@ export function Home() {
             to="/clientes"
             className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition-all hover:scale-[1.02]"
             style={{ backgroundColor: 'rgba(245,180,170,0.6)', color: miimboColors.brand.midnight }}
+            title="Ir a la pantalla de clientes para crear o revisar registros"
           >
             + Nuevo cliente
           </Link>
@@ -165,6 +177,7 @@ export function Home() {
             to="/propiedades"
             className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition-all hover:scale-[1.02]"
             style={{ backgroundColor: 'rgba(255,207,115,0.6)', color: miimboColors.brand.midnight }}
+            title="Ir a la pantalla de inmuebles para gestionarlos"
           >
             + Nueva propiedad
           </Link>
@@ -172,6 +185,7 @@ export function Home() {
             to="/simulacion"
             className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium transition-all hover:scale-[1.02]"
             style={{ backgroundColor: 'rgba(255,179,71,0.6)', color: miimboColors.brand.midnight }}
+            title="Crear una nueva simulación de crédito"
           >
             + Nueva simulación
           </Link>
@@ -230,6 +244,7 @@ function StatCard({ title, value, href, buttonLabel, tone }: StatCardProps) {
           color: 'rgba(12,8,41,0.75)',
           backgroundColor: 'rgba(254,251,247,0.9)',
         }}
+        title={`Ir a la sección de ${title.toLowerCase()}`}
       >
         {buttonLabel}
       </Link>

@@ -61,18 +61,12 @@ export function DashboardLayout() {
               label="Historial de simulaciones"
               icon="files"
             />
+            <SidebarItem to="/ayuda" label="Centro de ayuda" icon="files" />
           </nav>
         </div>
 
-        {/* Configuración / Cerrar sesión (Alineado con el nuevo tamaño de los items) */}
+        {/* Cerrar sesión */}
         <div className="space-y-1.5 text-xs">
-          <button
-            type="button"
-            className="flex w-full items-center gap-3 rounded-full px-3 py-2 text-white/90 hover:bg-white/15 transition-colors"
-          >
-            <Icon name="settings" className="h-3.5 w-3.5" />
-            <span>Configuración</span>
-          </button>
           <button
             type="button"
             onClick={handleLogout}
