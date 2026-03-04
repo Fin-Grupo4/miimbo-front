@@ -618,6 +618,8 @@ const handleMonedaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       return
     }
 
+    
+
     setSubmitError(null)
     setIsSubmitting(true)
 
@@ -751,6 +753,7 @@ const handleMonedaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       await updatePaymentPlan(plan.id, {
         idProperty: plan.idProperty,
         idClient: plan.idClient,
+        idBono: idBono === '' ? null : idBono,
         downPaymentPercentage: plan.downPaymentPercentage,
         termYears: plan.termYears,
         paymentFrequencyDays: plan.paymentFrequencyDays,
